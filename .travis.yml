@@ -1,14 +1,18 @@
 language: node_js
-
 node_js:
- - "4.1"
- - "4.0"
- - '0.12'
- - '0.11'
-
+- '4.1'
+- '4.0'
+- '0.12'
+- '0.11'
 before_script:
-
- - npm install -g mocha
-
+- npm install -g mocha
 script: mocha
-
+deploy:
+  provider: heroku
+  api_key:
+    secure: F89C/m1I9CyokmKrnko8qeb1SdDlQokG5zAe3/athom7YIfSkjEBGZvEnisguueRDn+QiwlW3lF6BSsXOZ7COp6KkQFPMn4QTPwgIZPLiTW3zfR5br85+8VptZJSelEf+HSzc+l8nRsxVBt+eO2Sd7DVJGFxSGjsvV/h20K7bXLHnRX0NUGhj5jrcpv50nfSXSEvUXwUfuvMt4jgJkbdfF8dl2kvj2XjdCPUfoKLdieXynZKD3jiEQNdTQfZ6NH3TLT0hBK1NHwX0whwZjIwdxzZ0eqDpM94e+xg8QqVv3Dylb/Aa8MB4eF6P/pJnlkmIzPAspObHYWxaUwKWYVDjpZpKExkBetsd6zPTwhPo9GM/COybXs/AVAmDb7zla058fcKJUKEfAztKzAthD73JmsOkHi04A4w+r7dVBztBHJuiFPrGN7y0CYenmPi6ftwfEeGKU6+KxJ0hHwaGBhGUze+ZoDy5ZTiXFw1l6AftDrZ04FOo1kLwv7HK089TPUf7rxPCnrlGcCz1gd5Byp42iinLkQ43cFpx/PmZZikfPDfKzANlCZNpKHlTVYj+5uRg2vIQdu2aZih+vJqZttf/e9KRYzT47TNk26q2VApPTyAgMKOi8JPOjicAvQzHI7Id8rioXOPrjwX3tom4BapbCySTWfjRaAV7GI5GDacsgM=
+  app: arcane-dusk-7697
+  on:
+    repo: amerriman/guest-speaker-app
+    branch: master
+    node: '0.12'
